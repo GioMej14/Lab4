@@ -8,13 +8,14 @@ package mejia_trigo_estructura;
  *
  * @author trigo
  */
-public class Mejia_Trigo_Estructura {
 
-    /**
-     * @param args the command line arguments
-     */
+import java.util.Scanner;
+
+public class Mejia_Trigo_Estructura {
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        
+        //
     }
     
 }
