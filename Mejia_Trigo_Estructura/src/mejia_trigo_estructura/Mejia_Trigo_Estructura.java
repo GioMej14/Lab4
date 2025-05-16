@@ -20,7 +20,6 @@ public class Mejia_Trigo_Estructura {
 
         //Menú principal
         do {
-
             System.out.println("**** MENÚ PRINCIPAL ****");
             System.out.println("1. Cifrado");
             System.out.println("2. Filtrar");
@@ -48,11 +47,11 @@ public class Mejia_Trigo_Estructura {
 
                         if (caracter >= 'A' && caracter <= 'Z') {
                             //Cifrado para máyusculas
-                            char nuevo = (char) ((caracter - 'A' + desplazamiento) % 26 + 'A'); //Esta linea cifra una letra mayuscula aplicando el desplazamiento y reiniciando si se pasa de la 'a'
+                            char nuevo = (char) ((caracter - 'A' + desplazamiento) % 26 + 'A');
                             resultado = resultado + nuevo;
                         } else if (caracter >= 'a' && caracter <= 'z') {
                             //Cifrado para minúsculas
-                            char nuevo = (char) ((caracter - 'a' + desplazamiento) % 26 + 'a'); //Esta linea cifra una letra minúscula aplicando el desplazamiento y reiniciando si se pasa de la 'a'
+                            char nuevo = (char) ((caracter - 'a' + desplazamiento) % 26 + 'a');
                             resultado = resultado + nuevo;
                         } else {
                             resultado = resultado + caracter;
@@ -71,7 +70,7 @@ public class Mejia_Trigo_Estructura {
                     System.out.print("Ingrese cantidad mínima de letras que debe tener la palabra: ");
                     int cantMinima = input.nextInt();
 
-                    frase2 = frase2 + " "; //Para hacer que el ciclo evalue hasta la ultima palabra aunque no tenga espacio 
+                    frase2 = frase2 + " ";
                     String palabra = "";
                     System.out.println("Palabras que cumplen la cantidad minima de " + cantMinima + " letras:");
 
@@ -80,13 +79,13 @@ public class Mejia_Trigo_Estructura {
                         char caracter = frase2.charAt(contador);
 
                         if (caracter != ' ') {
-                            palabra += caracter;  //acumular caracteres
+                            palabra += caracter;
                         } else {
                             int letras = 0;
                             for (int contar = 0; contar < palabra.length(); contar++) {
                                 char letra = palabra.charAt(contar);
 
-                                if ((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z')) { //Contar solo letras (ignorando simbolos o numeros)
+                                if ((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z')) {
                                     letras++;
                                 }
                             }
@@ -95,7 +94,7 @@ public class Mejia_Trigo_Estructura {
                                 System.out.println(palabra);
                             }
 
-                            palabra = ""; //Reiniciar variable para siguiente palabra
+                            palabra = "";
                         }
                     }
                     break;
@@ -111,9 +110,8 @@ public class Mejia_Trigo_Estructura {
                     System.out.print("Ingresar Texto:");
                     texto = input.next();
                     do {
-
                         //Menú de opciones
-                        System.out.println("****Menú Opciones");
+                        System.out.println("****Menú Opciones****");
                         System.out.println("1.Encriptar Texto");
                         System.out.println("2.Desencriptar Texto");
                         System.out.println("3.Regresar ");
@@ -139,7 +137,6 @@ public class Mejia_Trigo_Estructura {
                                 for (int j = 0; j < pares.length() || j < impares.length(); j++) {
                                     if (j < pares.length()) {
                                         desencriptado += pares.charAt(j);
-
                                     }
                                     if (j < impares.length()) {
                                         desencriptado += impares.charAt(j);
@@ -157,16 +154,18 @@ public class Mejia_Trigo_Estructura {
                             case 3:
                                 //Regresar al menú principal
                                 break;
+                            default:
+                                System.out.println("Opción inválida");
                         }
-                        while (option != 3);
-                        break;
-                      case 4: 
+                    } while (option != 3);
+                    break;
+                case 4: 
                     System.out.println("Saliendo del programa...");
-                break;
-                default: System.out.println("Opción invalida. Intentelo nuevamente.");
-                break;
-                    
-            } while(opcion != 4);
-
+                    break;
+                default: 
+                    System.out.println("Opción invalida. Intentelo nuevamente.");
+                    break;
             }
-        }
+        } while(opcion != 4);
+    }
+}
